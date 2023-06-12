@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 // import { Redux } from "next/redux" 
-// import MetaDecorator from './MetaDecorator';
+import MetaDecorator from './MetaDecorator';
 
 const Posts = () => {
     const router = useRouter()
@@ -37,12 +37,8 @@ const Posts = () => {
     ]
     return (
         <>
-            {/* <MetaDecorator
-                title={metaDetailsObj.title}
-                description={metaDetailsObj.description}
-                image={metaDetailsObj.imageUrl}
-                // imageAlt={metaDetailsObj.imageAlt}
-            ></MetaDecorator> */}
+            <MetaDecorator
+            ></MetaDecorator>
             <h1>Posts</h1>
             <ul>
                 {data.map(post => {
