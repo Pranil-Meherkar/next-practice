@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 const MetaDecorator = (props) => {
-  let currentUrl = "https://maha.buzz/" + props.id;
+  let currentUrl = "https://next-practice-one-blue.vercel.app/posts/" + (props.id || "");
   let quote = props.quote !== undefined ? props.quote : "";
   let title = props.title !== undefined ? props.title : "Maha Buzz";
   let image = props.image !== undefined ? props.image : "https://mahabuzz-uat.s3.ap-south-1.amazonaws.com/uploads/1684467827231.png";
