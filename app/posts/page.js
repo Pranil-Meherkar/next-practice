@@ -1,20 +1,9 @@
-"use client"
-
 import React from 'react';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 // import { Redux } from "next/redux" 
-import MetaDecorator from './MetaDecorator';
+// import MetaDecorator from './MetaDecorator';
 
 const Posts = () => {
-    const router = useRouter()
-    // const [metaDetailsObj, setMetaDetailsObj] = useState({
-    //     title: "Maha Buzz",
-    //     description:
-    //       "STAY UPDATED. LIGHTNING FAST UPDATES FROM VARIOUS SOURCES AT ONE PLACE.",
-    //     imageUrl:
-    //       "https://mahabuzz-uat.s3.ap-south-1.amazonaws.com/uploads/1684467827231.png",
-    //     imageAlt: "breaking news",
-    //   });
     const data = [
         {
             id: 1,
@@ -37,14 +26,17 @@ const Posts = () => {
     ]
     return (
         <>
-            <MetaDecorator
-            ></MetaDecorator>
+            {/* <MetaDecorator
+            ></MetaDecorator> */}
             <h1>Posts</h1>
             <ul>
                 {data.map(post => {
-                    return <li style={{cursor: "pointer"}} onClick={() => {
-                        router.push(`/posts/${post.id}`)
-                    }}>{post.title}</li>
+                    return <li key={post.id} style={{cursor: "pointer"}}
+                    >
+                        <Link legacyBehavior href={`/posts/[postId]`} as={`/posts/${post.id}`}>
+                            <a>{post.title}</a>
+                        </Link>
+                    </li>
                 })}
             </ul>
         </>  
